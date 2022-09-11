@@ -2,12 +2,15 @@
 {{- $gitName := promptStringOnce . "git.user" "Git Name" -}}
 {{- $gitEmail := promptStringOnce . "git.email" "Git Email" -}}
 {{- $gitSigningKey := promptStringOnce . "git.signingkey" "Git Signing Key" -}}
+{{- $shouldImportSSH := promptBoolOnce . "importSSH" "Should I import SSH" -}}
 
 [data]
-antigenpath = {{- $antigenPath | quote }}
+antigenpath = {{ $antigenPath | quote }}
 
 [data.git]
-name = {{- $gitName | quote }}
-email = {{- $gitEmail | quote }}
-signingkey = {{- $gitSigningKey | quote }}
+name = {{ $gitName | quote }}
+email = {{ $gitEmail | quote }}
+signingkey = {{ $gitSigningKey | quote }}
 
+[data.options]
+importssh = {{ $shouldImportSSH }}

@@ -1,5 +1,5 @@
-{{- if eq .chezmoi.os "linux" -}}
-{{- else if eq .chezmoi.os "darwin" -}}
+{{ if eq .chezmoi.os "linux" -}}
+{{ else if eq .chezmoi.os "darwin" -}}
 #!/usr/bin/env sh
 brew install lastpass-cli antigen zsh bat exa trash-cli nvim
-{{- end -}}
+{{ end -}}

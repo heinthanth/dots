@@ -1,6 +1,5 @@
-{{- if ne .chezmoi.os "windows" -}}
+{{ if ne .chezmoi.os "windows" -}}
 #!/usr/bin/env sh
 eval "$(ssh-agent -s)"
 ssh-add $HOME/.ssh/id_rsa
-{{- end -}}
-
+{{ end -}}
