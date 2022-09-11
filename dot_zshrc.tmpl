@@ -1,0 +1,35 @@
+# ----------- init -------------------------
+
+export GPG_TTY=$(tty)
+export HISTFILE="$HOME/.zhst"
+
+# ----------- zsh plugins ------------------
+
+source "{{ .antigenpath }}"
+
+export NVM_LAZY_LOAD=true
+export NVM_COMPLETION=true
+
+antigen bundle git
+antigen bundle command-not-found
+antigen bundle lukechilds/zsh-nvm
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+antigen apply
+
+# ----------- user settings ----------------
+
+alias cat="$PATH_PREFIX/bin/bat"
+alias ls="$PATH_PREFIX/bin/exa"
+alias rm="$PATH_PREFIX/bin/trash"
+alias vi="$PATH_PREFIX/bin/nvim"
+alias vim="$PATH_PREFIX/bin/nvim"
+
+export EDITOR="$PATH_PREFIX/bin/nvim"
+
+# ----------- theme -------------------------
+
+eval "$(starship init zsh)"
+

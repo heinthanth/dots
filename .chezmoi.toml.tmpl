@@ -1,0 +1,13 @@
+{{- $antigenPath := promptStringOnce . "antigenPath" "antigen.zsh path" -}}
+{{- $gitName := promptStringOnce . "git.user" "Git Name" -}}
+{{- $gitEmail := promptStringOnce . "git.email" "Git Email" -}}
+{{- $gitSigningKey := promptStringOnce . "git.signingkey" "Git Signing Key" -}}
+
+[data]
+antigenpath = {{- $antigenPath | quote }}
+
+[data.git]
+name = {{- $gitName | quote }}
+email = {{- $gitEmail | quote }}
+signingkey = {{- $gitSigningKey | quote }}
+

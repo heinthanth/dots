@@ -1,0 +1,10 @@
+{{/* iterm2 is just for macOS */}}
+{{- if ne .chezmoi.os "darwin" -}}
+Library/Application Support/iTerm2/DynamicProfiles/profiles.json
+{{- end -}}
+
+{{/* add .hushlogin in unix-like OSes */}}
+{{- if eq .chezmoi.os "windows" -}}
+.hushlogin
+{{- end -}}
+
