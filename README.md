@@ -29,6 +29,10 @@ MacBook Pro (13-inch, M1, 2020)
 
 ![MacBook Pro (13-inch, M1, 2020)](screenshots/macos.png)
 
+Fedora ( Docker, ARM64 )
+
+![MacBook Pro (13-inch, M1, 2020)](screenshots/fedora-docker.png)
+
 ## References
 
 - <https://www.chezmoi.io>

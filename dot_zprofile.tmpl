@@ -5,9 +5,7 @@ FPATH="$HOMEBREW_PREFIX/share/zsh/site-functions:${FPATH}"
 export PATH_PREFIX="$HOMEBREW_PREFIX"
 {{ else if eq .chezmoi.os "linux" -}}
 export PATH_PREFIX="/usr"
-{{ end }}
-
-[[ -d "$HOME/bin" ]] && PATH=$HOME/bin:$PATH
+{{ end -}}
 
 # don't sensitive underscore, hyphens, dots, letter-case
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
