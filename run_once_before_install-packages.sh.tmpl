@@ -2,8 +2,7 @@
 {{ if eq .chezmoi.osRelease.id "fedora" -}}
 #!/usr/bin/env sh
 
-sudo dnf install epel-release
-sudo dnf install lastpass-cli zsh bat exa trash-cli neovim python3-neovim lolcat fortune cowsay
+sudo dnf install lastpass-cli zsh bat exa trash-cli neovim python3-neovim lolcat fortune-mod cowsay
 
 mkdir -p $HOME/.local/share/antigen
 curl -L https://git.io/antigen > $HOME/.local/share/antigen/antigen.zsh
