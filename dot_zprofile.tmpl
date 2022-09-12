@@ -1,11 +1,11 @@
 {{ if eq .chezmoi.os "darwin" -}}
-{{/* source homebrew, add homebrew commands to zsh completion */}}
 eval "$(/opt/homebrew/bin/brew shellenv)"
 FPATH="$HOMEBREW_PREFIX/share/zsh/site-functions:${FPATH}"
 export PATH_PREFIX="$HOMEBREW_PREFIX"
+
 {{ else if eq .chezmoi.os "linux" -}}
-{{/* on linux, most binaries are under /usr/bin */}}
 export PATH_PREFIX="/usr"
+
 {{ end -}}
 
 {{ if ne .chezmoi.os "windows" -}}

@@ -1,11 +1,7 @@
-{{- $antigenPath := promptStringOnce . "antigenPath" "antigen.zsh path" -}}
-{{- $gitName := promptStringOnce . "git.user" "Git Name" -}}
-{{- $gitEmail := promptStringOnce . "git.email" "Git Email" -}}
+{{- $gitName := promptStringOnce . "git.user" "Git Author Name" -}}
+{{- $gitEmail := promptStringOnce . "git.email" "Git Author Email" -}}
 {{- $gitSigningKey := promptStringOnce . "git.signingkey" "Git Signing Key" -}}
 {{- $shouldImportSSH := promptBoolOnce . "importSSH" "Should I import SSH" -}}
-
-[data]
-antigenpath = {{ $antigenPath | quote }}
 
 [data.git]
 name = {{ $gitName | quote }}

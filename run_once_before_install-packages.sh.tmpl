@@ -1,5 +1,19 @@
 {{ if eq .chezmoi.os "linux" -}}
+{{ if eq .chezmoi.osRelease.id "fedora" -}}
+#!/usr/bin/env sh
+
+sudo dnf install epel-release
+sudo dnf install lastpass-cli zsh bat exa trash-cli neovim python3-neovim lolcat fortune cowsay
+
+mkdir -p $HOME/.local/share/antigen
+curl -L https://git.io/antigen > $HOME/.local/share/antigen/antigen.zsh
+{{ end -}}
 {{ else if eq .chezmoi.os "darwin" -}}
 #!/usr/bin/env sh
-brew install lastpass-cli antigen zsh bat exa trash-cli nvim
+
+brew install lastpass-cli zsh bat exa trash-cli nvim lolcat fortune cowsay
+
+mkdir -p $HOME/.local/share/antigen
+curl -L https://git.io/antigen > $HOME/.local/share/antigen/antigen.zsh
 {{ end -}}
+

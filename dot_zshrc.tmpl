@@ -3,9 +3,12 @@
 export GPG_TTY=$(tty)
 export HISTFILE="$HOME/.zhst"
 
+fortune -s | cowsay | lolcat
+printf "\n"
+
 # ----------- zsh plugins ------------------
 
-source "{{ .antigenpath }}"
+source "$HOME/.local/share/antigen/antigen.zsh"
 
 export NVM_LAZY_LOAD=true
 export NVM_COMPLETION=true
