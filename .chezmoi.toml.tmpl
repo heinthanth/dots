@@ -3,6 +3,12 @@
 {{- $gitSigningKey := promptStringOnce . "git.signingkey" "Git Signing Key" -}}
 {{- $shouldImportSSH := promptBoolOnce . "importSSH" "Should I import SSH" -}}
 
+[data]
+{{ if $shouldImportSSH -}}
+{{- $lastpassLoginId := promptStringOnce . "lastpassId" "LastPass Login ID" -}}
+lastpassloginid = {{ $lastpassLoginId | quote }}
+{{- end }}
+
 [data.git]
 name = {{ $gitName | quote }}
 email = {{ $gitEmail | quote }}

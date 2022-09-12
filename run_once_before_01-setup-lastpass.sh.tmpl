@@ -1,0 +1,5 @@
+{{ if .options.importssh -}}
+#!/usr/bin/env sh
+
+lpass login {{ .lastpassloginid }}
+{{ end }}

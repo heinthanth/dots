@@ -1,0 +1,9 @@
+{{ if .options.importssh -}}
+#!/usr/bin/env sh
+
+# i don't whether it's good or not
+killall ssh-agent
+
+eval "$(ssh-agent -s)"
+ssh-add $HOME/.ssh/id_rsa
+{{ end -}}
