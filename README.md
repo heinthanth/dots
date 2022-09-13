@@ -38,6 +38,12 @@ Fedora ( Docker, ARM64 )
 
 ![MacBook Pro (13-inch, M1, 2020)](screenshots/fedora-docker.png)
 
+Ubuntu ( Docker, ARM64 )
+
+> As u can see, cursor `█` and `$` dollar sign are in the same position. It working with bash tho.
+
+![MacBook Pro (13-inch, M1, 2020)](screenshots/ubuntu-docker.png)
+
 ## References
 
 - <https://www.chezmoi.io>
