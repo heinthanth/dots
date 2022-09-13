@@ -3,6 +3,9 @@
 export GPG_TTY=$(tty)
 export HISTFILE="$HOME/.zhst"
 
+{{ if eq .chezmoi.osRelease.id "ubuntu" -}}
+export PATH=/usr/games:$PATH
+{{ end -}}
 [[ -d "$HOME/bin" ]] && export PATH=$HOME/bin:$PATH
 [[ -d "$HOME/.local/bin" ]] && export PATH=$HOME/bin:$PATH
 
@@ -27,7 +30,11 @@ antigen apply
 
 # ----------- user settings ----------------
 
+{{ if eq .chezmoi.osRelease.id "ubuntu" -}}
+alias cat="$PATH_PREFIX/bin/batcat"
+{{ else -}}
 alias cat="$PATH_PREFIX/bin/bat"
+{{ end -}}
 alias ls="$PATH_PREFIX/bin/exa"
 alias rm="$PATH_PREFIX/bin/trash"
 alias vi="$PATH_PREFIX/bin/nvim"
