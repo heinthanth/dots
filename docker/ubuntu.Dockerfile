@@ -1,7 +1,7 @@
 FROM ubuntu
 
 RUN apt update
-RUN apt install curl zsh passwd finger sudo -y
+RUN apt install -y curl zsh passwd finger sudo
 
 ENV USER=heinthant
 ENV PASSWORD=p@ssw0rd5

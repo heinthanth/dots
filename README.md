@@ -14,7 +14,7 @@ For Windows, well, I don't use it. So, I don't know. ( I might work later ).
 For Linux,
 
 - Fedora - 100% supported since I use Fedora.
-- Ubuntu - I expect `starship` to be installed. As far as I tested, starship not working ( on docker ).
+- Ubuntu - 100% supported. But, as far as I tested, starship is not working as expected with ubuntu zsh ( on docker arm64 ).
 
 ## How to Import
 

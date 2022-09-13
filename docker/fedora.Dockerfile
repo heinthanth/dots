@@ -1,6 +1,6 @@
 FROM fedora
 
-RUN dnf install curl zsh passwd finger shadow-utils -y
+RUN dnf install -y curl zsh passwd finger shadow-utils
 
 ENV USER=heinthant
 ENV PASSWORD=p@ssw0rd5
