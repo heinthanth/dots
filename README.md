@@ -9,7 +9,12 @@ For macOS,
 - `brew` must be installed
 - `eval $(/opt/homebrew/bin/brew shellenv)` must be run once before importing ( on fresh new machine ). Otherwise u will get `zsh: command not found: brew`.
 
-For Linux, not supported for now ( since I haven't write scripts for it ). For Windows, well, I don't use it. So, I don't know.
+For Windows, well, I don't use it. So, I don't know. ( I might work later ).
+
+For Linux,
+
+- Fedora - 100% supported since I use Fedora.
+- Ubuntu - I expect `starship` to be installed. As far as I tested, starship not working ( on docker ).
 
 ## How to Import
 

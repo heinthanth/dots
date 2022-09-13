@@ -5,6 +5,9 @@ FPATH="$HOMEBREW_PREFIX/share/zsh/site-functions:${FPATH}"
 export PATH_PREFIX="$HOMEBREW_PREFIX"
 {{ else if eq .chezmoi.os "linux" -}}
 export PATH_PREFIX="/usr"
+{{ else if eq .chezmoi.osRelease.id "ubuntu" -}}
+export PATH="$PATH:/usr/games"
+{{ end -}}
 {{ end -}}
 
 # don't sensitive underscore, hyphens, dots, letter-case

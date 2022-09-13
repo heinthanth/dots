@@ -6,8 +6,7 @@ export HISTFILE="$HOME/.zhst"
 [[ -d "$HOME/bin" ]] && export PATH=$HOME/bin:$PATH
 [[ -d "$HOME/.local/bin" ]] && export PATH=$HOME/bin:$PATH
 
-fortune -s | cowsay | lolcat
-printf "\n"
+{ fortune -s | cowsay | lolcat } && printf "\n"
 
 # ----------- zsh plugins ------------------
 
@@ -36,9 +35,9 @@ alias vim="$PATH_PREFIX/bin/nvim"
 
 export EDITOR="$PATH_PREFIX/bin/nvim"
 
-# use HOME and END characters to move to the beginning and end of the line
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
+bindkey '^r' history-incremental-search-backward
 
 # ----------- prompt -------------------------
 
