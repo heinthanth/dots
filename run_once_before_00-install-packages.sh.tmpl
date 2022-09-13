@@ -7,7 +7,8 @@ sudo dnf install zsh bat exa trash-cli neovim python3-neovim lolcat fortune-mod 
 sudo dnf install lastpass-cli
 {{ end }}
 {{ else if eq .chezmoi.osRelease.id "ubuntu" -}}
-sudo apt install zsh bat exa trash-cli neovim python3-neovim lolcat fortune-mod cowsay starship git
+sudo apt install zsh bat exa trash-cli neovim python3-neovim lolcat fortune-mod cowsay git
+curl -so- https://starship.rs/install.sh | sudo sh -s -- -y
 {{ if .options.importssh -}}
 sudo apt install lastpass-cli
 {{ end }}
