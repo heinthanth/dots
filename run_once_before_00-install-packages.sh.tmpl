@@ -13,13 +13,12 @@ curl -sS https://starship.rs/install.sh | sudo sh -s -- -y
 sudo apt install -y lastpass-cli
 {{ end }}
 {{ end }}
-mkdir -p $HOME/.local/share/antigen
-curl -L https://git.io/antigen > $HOME/.local/share/antigen/antigen.zsh
 {{ else if eq .chezmoi.os "darwin" -}}
 brew install zsh bat exa trash-cli nvim lolcat fortune cowsay starship
 {{ if .options.importssh -}}
 brew install lastpass-cli
 {{ end }}
+{{ end -}}
+
 mkdir -p $HOME/.local/share/antigen
 curl -L https://git.io/antigen > $HOME/.local/share/antigen/antigen.zsh
-{{ end -}}

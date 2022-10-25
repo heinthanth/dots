@@ -7,7 +7,7 @@ export HISTFILE="$HOME/.zhst"
 export PATH=/usr/games:$PATH
 {{ end -}}
 [[ -d "$HOME/bin" ]] && export PATH=$HOME/bin:$PATH
-[[ -d "$HOME/.local/bin" ]] && export PATH=$HOME/bin:$PATH
+[[ -d "$HOME/.local/bin" ]] && export PATH=$HOME/.local/bin:$PATH
 
 { fortune -s | cowsay | lolcat } && printf "\n"
 
@@ -46,6 +46,14 @@ bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 bindkey '^r' history-incremental-search-backward
 
+# ----------- other --------------------------
+
+{{ if eq .chezmoi.os "darwin" -}}
+export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
+{{ end -}}
+source "$HOME/.cargo/env"
+
 # ----------- prompt -------------------------
 
 eval "$(starship init zsh)"
+
