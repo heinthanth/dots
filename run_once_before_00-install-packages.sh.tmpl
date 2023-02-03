@@ -6,17 +6,26 @@ sudo dnf install -y zsh bat exa trash-cli neovim python3-neovim lolcat fortune-m
 {{ if .options.importssh -}}
 sudo dnf install -y lastpass-cli
 {{ end }}
+{{ if .options.importgpg -}}
+sudo dnf install -y gnupg
+{{ end }}
 {{ else if eq .chezmoi.osRelease.id "ubuntu" -}}
-sudo apt install -y zsh bat exa trash-cli neovim python3-neovim lolcat fortune-mod cowsay git
+sudo apt install -y zsh bat exa trash-cli neovim python3 python3-neovim lolcat fortune-mod cowsay git
 curl -sS https://starship.rs/install.sh | sudo sh -s -- -y
 {{ if .options.importssh -}}
 sudo apt install -y lastpass-cli
+{{ end }}
+{{ if .options.importgpg -}}
+sudo apt install -y gnupg
 {{ end }}
 {{ end }}
 {{ else if eq .chezmoi.os "darwin" -}}
 brew install zsh bat exa trash-cli nvim lolcat fortune cowsay starship
 {{ if .options.importssh -}}
 brew install lastpass-cli
+{{ end }}
+{{ if .options.importssh -}}
+brew install gnupg
 {{ end }}
 {{ end -}}
 

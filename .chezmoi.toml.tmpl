@@ -2,9 +2,10 @@
 {{- $gitEmail := promptStringOnce . "git.email" "Git Author Email" -}}
 {{- $gitSigningKey := promptStringOnce . "git.signingkey" "Git Signing Key" -}}
 {{- $shouldImportSSH := promptBoolOnce . "importSSH" "Should I import SSH" -}}
+{{- $shouldImportGPG := promptBoolOnce . "importGPG" "Should I import GPG" -}}
 
 [data]
-{{ if $shouldImportSSH -}}
+{{ if or $shouldImportSSH $shouldImportGPG -}}
 {{- $lastpassLoginId := promptStringOnce . "lastpassId" "LastPass Login ID" -}}
 lastpassloginid = {{ $lastpassLoginId | quote }}
 {{- end }}
@@ -16,3 +17,4 @@ signingkey = {{ $gitSigningKey | quote }}
 
 [data.options]
 importssh = {{ $shouldImportSSH }}
+importgpg = {{ $shouldImportGPG }}

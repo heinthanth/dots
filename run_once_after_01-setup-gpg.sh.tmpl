@@ -1,0 +1,12 @@
+{{ if .options.importgpg -}}
+#!/usr/bin/env sh
+
+note="$(lpass show --json "GPG" | jq -r 'map(.note)[0]')"
+getPrivate="note=\"\"\"$note\"\"\"\nprint(note.split('-----BREAK-----')[0])"
+getSubPrivate="note=\"\"\"$note\"\"\"\nprint(note.split('-----BREAK-----')[1])"
+getPublic="note=\"\"\"$note\"\"\"\nprint(note.split('-----BREAK-----')[2])"
+
+echo "$getPrivate" | python3 | gpg --import
+echo "$getSubPrivate" | python3 | gpg --import
+echo "$getPublic" | python3 | gpg --import
+{{ end -}}

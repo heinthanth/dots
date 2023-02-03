@@ -51,7 +51,9 @@ bindkey '^r' history-incremental-search-backward
 {{ if eq .chezmoi.os "darwin" -}}
 export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
 {{ end -}}
-source "$HOME/.cargo/env"
+
+[[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
+[[ -d "$HOME/Other/nim" ]] && export PATH="$PATH:$HOME/Other/nim/bin"
 
 # ----------- prompt -------------------------
 

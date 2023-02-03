@@ -6,7 +6,7 @@ docker
 .ssh
 {{ end -}}
 
-{{/* iterm2 is just for macOS */}}
+{{/* iterm2 and font paths are just for macOS */}}
 {{ if ne .chezmoi.os "darwin" -}}
 Library
 {{ end }}
