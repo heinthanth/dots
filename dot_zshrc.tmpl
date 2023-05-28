@@ -50,6 +50,7 @@ bindkey '^r' history-incremental-search-backward
 
 {{ if eq .chezmoi.os "darwin" -}}
 export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
+test -e "$HOME/.iterm2_shell_integration.zsh" && source "$HOME/.iterm2_shell_integration.zsh" || true
 {{ end -}}
 
 [[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"

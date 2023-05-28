@@ -6,7 +6,9 @@ getPrivate="note=\"\"\"$note\"\"\"\nprint(note.split('-----BREAK-----')[0])"
 getSubPrivate="note=\"\"\"$note\"\"\"\nprint(note.split('-----BREAK-----')[1])"
 getPublic="note=\"\"\"$note\"\"\"\nprint(note.split('-----BREAK-----')[2])"
 
-echo "$getPrivate" | python3 | gpg --import
-echo "$getSubPrivate" | python3 | gpg --import
-echo "$getPublic" | python3 | gpg --import
+echo "$getPrivate" | python3 > .tmp_private.asc
+echo "$getSubPrivate" | python3 > .tmp_sub_private.asc
+echo "$getPublic" | python3 > .tmp_public.asc
+
+gpg --import .tmp_*.asc && /bin/rm -rf .tmp_*.asc
 {{ end -}}
