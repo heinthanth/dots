@@ -15,13 +15,8 @@ export PATH=/usr/games:$PATH
 
 source "$HOME/.local/share/antigen/antigen.zsh"
 
-export NVM_LAZY_LOAD=true
-export NVM_COMPLETION=true
-export NVM_AUTO_USE=true
-
 antigen bundle git
 antigen bundle command-not-found
-antigen bundle lukechilds/zsh-nvm
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -44,7 +39,6 @@ export EDITOR="$PATH_PREFIX/bin/nvim"
 
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
-bindkey '^r' history-incremental-search-backward
 
 # ----------- other --------------------------
 
@@ -53,6 +47,10 @@ export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
 test -e "$HOME/.iterm2_shell_integration.zsh" && source "$HOME/.iterm2_shell_integration.zsh" || true
 {{ end -}}
 
+export PATH="$HOME/.local/share/fnm:$PATH"
+eval "$(fnm env --use-on-cd)"
+
+[[ -f "$HOME/.fzf.zsh" ]] && source "$HOME/.fzf.zsh"
 [[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
 [[ -d "$HOME/Other/nim" ]] && export PATH="$PATH:$HOME/Other/nim/bin"
 
