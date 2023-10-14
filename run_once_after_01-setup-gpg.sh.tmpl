@@ -1,5 +1,5 @@
 {{ if .options.importgpg -}}
-#!/usr/bin/env sh
+#!/usr/bin/env zsh
 
 note="$(lpass show --json "GPG" | jq -r 'map(.note)[0]')"
 getPrivate="note=\"\"\"$note\"\"\"\nprint(note.split('-----BREAK-----')[0])"

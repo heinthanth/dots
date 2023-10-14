@@ -1,7 +1,11 @@
 # ----------- init -------------------------
 
 export GPG_TTY=$(tty)
+
 export HISTFILE="$HOME/.zhst"
+export HISTSIZE=10000
+export SAVEHIST=10000
+setopt SHARE_HISTORY
 
 {{ if and (eq .chezmoi.os "linux") (eq .chezmoi.osRelease.id "ubuntu") -}}
 export PATH=/usr/games:$PATH
@@ -37,6 +41,7 @@ alias vim="$PATH_PREFIX/bin/nvim"
 
 export EDITOR="$PATH_PREFIX/bin/nvim"
 
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 

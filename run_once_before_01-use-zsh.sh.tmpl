@@ -1,9 +1,8 @@
 #!/usr/bin/env sh
 
-shell=$(finger $USER | grep -o 'Shell: .*' | cut -d' ' -f2)
-[ "$shell" = "/bin/zsh" ] && exit 0
+[ "$SHELL" = "/bin/zsh" ] && exit 0
 
-printf "Current shell is '$shell', but should use zsh. Do u want to change it? [Y/n]: "
+printf "Current shell is '$SHELL', but should use zsh. Do u want to change it? [Y/n]: "
 read -r answer
 
 [[ "$answer" =~ [nN] ]] && exit 0
