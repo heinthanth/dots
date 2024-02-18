@@ -20,7 +20,7 @@ sudo apt install -y gnupg jq
 {{ end }}
 {{ end }}
 {{ else if eq .chezmoi.os "darwin" -}}
-brew install zsh bat exa trash-cli nvim lolcat fortune cowsay starship
+brew install zsh bat eza trash-cli nvim lolcat fortune cowsay starship
 {{ if .options.importssh -}}
 brew install lastpass-cli
 {{ end }}
