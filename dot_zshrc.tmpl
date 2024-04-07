@@ -47,11 +47,6 @@ bindkey "^[[F" end-of-line
 
 # ----------- other --------------------------
 
-{{ if eq .chezmoi.os "darwin" -}}
-export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
-test -e "$HOME/.iterm2_shell_integration.zsh" && source "$HOME/.iterm2_shell_integration.zsh" || true
-{{ end -}}
-
 export PATH="$HOME/.local/share/fnm:$PATH"
 eval "$(fnm env --use-on-cd)"
 

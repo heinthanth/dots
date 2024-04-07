@@ -2,7 +2,7 @@
 
 {{ if eq .chezmoi.os "linux" -}}
 {{ if eq .chezmoi.osRelease.id "fedora" -}}
-sudo dnf install -y zsh bat exa trash-cli neovim python3-neovim lolcat fortune-mod cowsay starship git
+sudo dnf install -y zsh bat eza trash-cli neovim python3-neovim lolcat fortune-mod cowsay starship git
 {{ if .options.importssh -}}
 sudo dnf install -y lastpass-cli
 {{ end }}
@@ -34,3 +34,5 @@ curl -L https://git.io/antigen > $HOME/.local/share/antigen/antigen.zsh
 
 curl -fsSL https://fnm.vercel.app/install | bash -s -- -s
 
+git clone https://github.com/junegunn/fzf $HOME/.local/share/fzf
+yes | $HOME/.local/share/fzf/install --no-update-rc --no-bash --no-fish
